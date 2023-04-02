@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collection;
 @Table
 @Entity
 @Data
@@ -22,5 +23,8 @@ public class Etudiant {
     private  String username;
     private String password;
 
-    
+    @OneToMany(mappedBy = "etudiant",fetch =FetchType.LAZY )
+    private Collection<Document> documents;
+
+    @ManyToOne Filiere filiere;
 }

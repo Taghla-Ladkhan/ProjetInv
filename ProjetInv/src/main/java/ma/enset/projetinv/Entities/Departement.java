@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collection;
+
 @Table
 @Entity
 @Data
@@ -15,4 +17,6 @@ public class Departement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
+    @OneToMany(mappedBy = "departement",fetch =FetchType.LAZY )
+    private Collection<Filiere> filieres ;
 }
