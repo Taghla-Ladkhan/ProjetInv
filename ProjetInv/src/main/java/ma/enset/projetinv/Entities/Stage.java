@@ -32,7 +32,7 @@ public class Stage {
     private Etudiant etudiant;
     @OneToOne
     private Entreprise entreprise;
-    @OneToOne
+    @ManyToOne
     private Annee_universitaire annee_univ;
     //Methodes
     public Long getId() {
