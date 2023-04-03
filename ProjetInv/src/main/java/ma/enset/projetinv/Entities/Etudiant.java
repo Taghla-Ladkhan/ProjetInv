@@ -22,6 +22,8 @@ public class Etudiant {
     private String CIN;
     private  String username;
     private String password;
+    @OneToOne(mappedBy = "etudiant")
+    private Stage stage;
 
     @OneToMany(mappedBy = "etudiant",fetch =FetchType.LAZY )
     private Collection<Document> documents;
